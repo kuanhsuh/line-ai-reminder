@@ -1,0 +1,20 @@
+{
+  "name": "line-ai-reminder",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "dev": "pnpm build:web && pnpm db:migrate && pnpm --filter @reminder/worker dev",
+    "build:web": "pnpm --filter @reminder/web build",
+    "db:migrate": "pnpm --filter @reminder/worker db:migrate",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm build:web && vitest run",
+    "build": "pnpm build:web && pnpm --filter @reminder/shared build && pnpm --filter @reminder/worker build"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

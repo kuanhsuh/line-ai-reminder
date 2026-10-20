@@ -1,0 +1,9 @@
+pnpm-lock.yaml
+dist/
+.wrangler/
+.astro/
+AGENTS.md
+PRD.md
+CODEX_START_HERE.md
+MILESTONES.md
+SETUP_CHECKLIST.md

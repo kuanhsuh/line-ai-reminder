@@ -1,0 +1,23 @@
+{
+  "name": "@reminder/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --var LOCAL_MOCK_AUTH:1",
+    "db:migrate": "wrangler d1 migrations apply DB --local",
+    "typecheck": "tsc --noEmit",
+    "build": "wrangler deploy --dry-run --outdir dist"
+  },
+  "dependencies": {
+    "@js-temporal/polyfill": "^0.5.1",
+    "@reminder/shared": "workspace:*",
+    "hono": "^4.13.13",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261019.1",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.151.2"
+  }
+}
